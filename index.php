@@ -4,7 +4,7 @@ $action = '';
 $message = $postdata['item']['message']['message'];
 $name = explode(" ", $message);
 $url = "http://api.giphy.com/v1/gifs/search?q=".$name[1]."&api_key=dc6zaTOxFJmzC";
-$json = file_get_contents('url_here');
+$json = file_get_contents($url);
 $obj = json_decode($json);
 $image = $obj->data->images->fixed_height->url;
 
@@ -24,7 +24,7 @@ echo '{
 "height": 564
 }
 },
-"message": "What do you want '.$image.'?",
+"message": "What do you want.. '.$image.'?",
 "message_format": "html"
 }';
 ?>
