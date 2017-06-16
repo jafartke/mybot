@@ -1,4 +1,10 @@
 <?php
+$effortObj = new peopleEffort();
+//$effortObj->addPeopleEffort($_POST['mode'], $_POST['user'], $_POST['project_id'], $_POST['effort'], $_POST['note'], $_POST['date'], $_POST['unit'], $_POST['effort_type']);
+$postdata = json_decode(file_get_contents("php://input"), true);
+$action = '';
+$message = $postdata['item']['message']['message'];
+$name = explode(" ", $message);
 echo '{
 "color": "green",
 "card": {
@@ -15,7 +21,7 @@ echo '{
 "height": 564
 }
 },
-"message": "What do you want?",
+"message": "What do you want '.$name[1].'?",
 "message_format": "html"
 }';
 ?>
