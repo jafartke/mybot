@@ -15,9 +15,7 @@ echo '{
 "height": 564
 }
 },
-"message": "
-<h1>Testing...</h1>
-",
+"message": "What do you want?",
 "message_format": "html"
 }';
 ?>
