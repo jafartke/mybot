@@ -1,4 +1,21 @@
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    var finalURL = "";
+    $.getJSON('https://api.giphy.com/v1/gifs/search?q=friday&api_key=dc6zaTOxFJmzC', function(data) {
+    $.each(data.data,function(i,obj){
+    					finalURL = obj.embed_url;
+    });
+    console.log(finalURL)
+    });
+});
+</script>
 <?php
+//echo $imageURL = '<script>document.write(finalURL);</script>';
+//exit;
 $postdata = json_decode(file_get_contents("php://input"), true);
 $action = '';
 $message = $postdata['item']['message']['message'];
@@ -24,7 +41,7 @@ echo '{
 "height": 564
 }
 },
-"message": "What do you want.. '.$image.'?",
+"message": "What do you want.. <img src="https://giphy.com/embed/3o84U0cCBPv6F0IIZa">'.$image.'?",
 "message_format": "html"
 }';
 ?>
