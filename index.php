@@ -20,10 +20,10 @@ $postdata = json_decode(file_get_contents("php://input"), true);
 $action = '';
 $message = $postdata['item']['message']['message'];
 $name = explode(" ", $message);
-$url = "http://api.giphy.com/v1/gifs/search?q=".$name[1]."&api_key=dc6zaTOxFJmzC";
-$json = file_get_contents($url);
-$obj = json_decode($json);
-$image = $obj->data->images->fixed_height->url;
+//$url = "http://api.giphy.com/v1/gifs/search?q=".$name[1]."&api_key=dc6zaTOxFJmzC";
+//$json = file_get_contents($url);
+//$obj = json_decode($json);
+//$image = $obj->data->images->fixed_height->url;
 
 echo '{
 "color": "green",
