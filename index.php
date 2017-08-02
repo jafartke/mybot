@@ -13,7 +13,7 @@ $gifURL =  $obj->data[rand($minCount,$maxCount)]->images->original_still->url;
 
 $response = array(
   "color" => "red",
-  "message" => "<img src='".$gifURL."'>",
+  "message" => "testing",
   "message_format" => "html"
 );
 return $response;
