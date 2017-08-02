@@ -7,7 +7,6 @@ $url = "http://api.giphy.com/v1/gifs/search?q=".$name[1]."&api_key=dc6zaTOxFJmzC
 //$url = "http://api.giphy.com/v1/gifs/search?q=friday&api_key=dc6zaTOxFJmzC";
 $json = file_get_contents($url);
 $obj = json_decode($json);
-echo "<pre>";
 $minCount =  0;
 $maxCount =  count($obj->data);
 $gifURL =  $obj->data[rand($minCount,$maxCount)]->images->original_still->url;
