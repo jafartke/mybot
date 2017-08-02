@@ -12,24 +12,11 @@ $minCount =  0;
 $maxCount =  count($obj->data);
 $gifURL =  $obj->data[rand($minCount,$maxCount)]->images->original_still->url;
 
-$return =  '{
-"color": "green",
-"card": {
-"style": "link",
-"url": "http://i0.kym-cdn.com/photos/images/newsfeed/000/131/786/tumblr_ljkeuyjp1a1qafrh6.gif",
-"id": null,
-"title": "GIFY",
-"description": "$gifURL",
-"date": 1497609802,
-"thumbnail": {
-"url": "https://c.martech.zone/wp-content/uploads/2010/06/example-logo.png",
-"url@2x": "https://c.martech.zone/wp-content/uploads/2010/06/example-logo.png",
-"width": 1193,
-"height": 564
-}
-},
-"message": "What do you want.. <img src="$gifURL">'.$image.'?",
-"message_format": "html"
-}';
-return $return;
+$response = array(
+  "color" => "red",
+  "message" => "<img src='".$gifURL."'>",
+  "message_format" => "html"
+);
+return $response;
+
 ?>
